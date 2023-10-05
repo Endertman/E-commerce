@@ -4,7 +4,7 @@ let productos = [
         id: 1,
         producto: "Malliot Jumbo Visma - Tour de Francia 2023 The Vélodrome Collection",
         categoria: "malliot_hombres",
-        Talla: "S-M-L-Xl",
+        talla: "S-M-L-Xl",
         precio: 55,
         rutaImagen: "https://dvy7d3tlxdpkf.cloudfront.net/team-jumbo/_1755xAUTO_resize_center-center_85_none/1984393/Tourshirt-mannen-1.webp",
     },
@@ -12,7 +12,7 @@ let productos = [
         id: 2,
         producto: "Malliot Jumbo Visma",
         categoria: "malliot_hombres",
-        Talla: "S-M-L-Xl",
+        talla: "S-M-L-Xl",
         precio: 45,
         rutaImagen: "https://dvy7d3tlxdpkf.cloudfront.net/team-jumbo/_1755xAUTO_resize_center-center_85_none/1636519/49035600_main_01.webp",
     },
@@ -20,9 +20,49 @@ let productos = [
         id: 3,
         producto: "Malliot Amarillo Tour de Francia 2023 - Jonas Vingegard - Jumbo Visma",
         categoria: "malliot_hombres",
-        Talla: "S-M-L-Xl",
-        precio: 45,
+        talla: "S-M-L-Xl",
+        precio: 60,
         rutaImagen: "https://dvy7d3tlxdpkf.cloudfront.net/team-jumbo/_1755xAUTO_resize_center-center_85_none/2064080/TM9440023TDELDER_GI_CLOSEUP01_2023-07-17-154526_zyzb.webp",
+    },
+    {
+        id: 4,
+        producto: "Malliot UAE Team Emirates",
+        categoria: "malliot_hombres",
+        talla: "S-M-L-Xl",
+        precio: 70,
+        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/MAGLIA-MANICHE-CORTE-UFFICIALE-UAE-TEAM-EMIRATES-PISSEI_642_dettaglio@2x.jpg",
+    },
+    {
+        id: 5,
+        producto: "Calcetines UAE Team Emirates",
+        categoria: "accesorios",
+        talla: "S/M-L/Xl",
+        precio: 30,
+        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/CALZINO-UAE-TEAM-EMIRATES-PISSEI_912_dettaglio@2x.jpg",
+    },
+    {
+        id: 6,
+        producto: "Cap UAE Team Emirates",
+        categoria: "accesorios",
+        talla: "Unica",
+        precio: 25,
+        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/CAPPELLINO-UAE-TEAM-EMIRATES-PISSEI_638_dettaglio@2x.jpg",
+    },
+    {
+        id: 7,
+        producto: "Culotte UAE Team Emirates Mujer",
+        categoria: "culotte",
+        talla: "S-M-L-Xl",
+        precio: 100,
+        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/PANTALONCINO-CORTO-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_634_dettaglio@2x.jpg",
+    },
+    {
+        id: 4,
+        producto: "Malliot UAE Team Emirates Mujer",
+        categoria: "malliot_mujeres",
+        talla: "S-M-L-Xl",
+        precio: 85,
+        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/MAGLIA-MANICHE-CORTE-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_635_dettaglio@2x.jpg",
     },
 ];
 
@@ -49,7 +89,6 @@ function renderizarProductos(productos) {
     });
 }
 
-// Llama a la función para renderizar los productos
 renderizarProductos(productos);
 
 // Función para agregar un producto al carrito
@@ -80,7 +119,6 @@ function agregarAlCarrito(productoId) {
     renderizarCarrito();
 }
 
-// Escucha el evento clic en los botones "Agregar al carrito"
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("agregar-al-carrito")) {
         const productoId = parseInt(event.target.dataset.id);
@@ -149,10 +187,8 @@ function verOcultarCarrito() {
     contenedorProductos.classList.toggle("oculta");
 }
 
-// Obtén una referencia al botón de ver/ocultar el carrito
 const verOcultarCarritoButton = document.getElementById("verOcultarCarritoButton");
 
-// Agrega un controlador de eventos al botón
 verOcultarCarritoButton.addEventListener("click", () => {
     verOcultarCarrito();
 });
@@ -170,7 +206,7 @@ let botonBuscar = document.getElementById("buscar");
 // Agrega un evento al botón de búsqueda para realizar el filtrado
 botonBuscar.addEventListener("click", () => filtrarProductos(productos));
 
-// Función para filtrar los productos
+// Función para filtrar los productos según botones
 function filtrarProductos(productos) {
     const textoBusqueda = buscador.value.trim().toUpperCase();
 
@@ -194,4 +230,61 @@ botonesCategoria.forEach(boton => {
         // Renderiza los productos filtrados
         renderizarProductos(productosFiltrados);
     });
+});
+
+// Carrusel con productos alertorios
+
+function generarProductosAleatorios(productos, cantidad) {
+    const productosAleatorios = [];
+    const copiaProductos = [...productos];
+
+    for (let i = 0; i < cantidad; i++) {
+        if (copiaProductos.length === 0) {
+            break; // Evita un bucle infinito si se solicitan más productos de los disponibles
+        }
+
+        const indiceAleatorio = Math.floor(Math.random() * copiaProductos.length);
+        const productoAleatorio = copiaProductos.splice(indiceAleatorio, 1)[0];
+        productosAleatorios.push(productoAleatorio);
+    }
+
+    return productosAleatorios;
+}
+
+// Genera una lista de 3 productos aleatorios para el carrusel
+const productosAleatorios = generarProductosAleatorios(productos, 3);
+
+// Referencias a elementos del carrusel
+const carouselIndicators = document.querySelector(".carousel-indicators");
+const carouselInner = document.querySelector(".carousel-inner");
+
+// Itera sobre los productos aleatorios y crea los elementos del carrusel
+productosAleatorios.forEach((producto, index) => {
+    // Crea un indicador
+    const indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.setAttribute("data-bs-target", "#carouselExampleCaptions");
+    indicator.setAttribute("data-bs-slide-to", index.toString());
+    if (index === 0) {
+        indicator.classList.add("active");
+    }
+    carouselIndicators.appendChild(indicator);
+
+    // Crea un elemento de carrusel
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    if (index === 0) {
+        carouselItem.classList.add("active");
+    }
+
+    // Agrega la imagen y título del producto al elemento de carrusel
+    carouselItem.innerHTML = `
+        <img src="${producto.rutaImagen}" class="d-block w-100" alt="${producto.producto}">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>${producto.producto}</h5>
+            <p>Descripción del producto.</p>
+        </div>
+    `;
+
+    carouselInner.appendChild(carouselItem);
 });
