@@ -3,55 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce</title>
+    <title>Aeroco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="/scss/styles.css">
 </head>
 <body>
-    <div class="container">                                                     
-        <div class="row">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
-                  <button class="navbar-toggler" type="button"> 
-                    <span class="navbar-icon "><iconify-icon icon="system-uicons:cart"></iconify-icon></span>
-                  </button>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Dropdown link
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                  </div>
+  <div>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a class="navbar-brand" href="index.html">
+                  <img class="logo" id="recarga" src="img/logo_black.svg" alt="Aeroco black_logo">
+                </a>
+              </div>
+              <div class="col">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mujeres
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="malliot_mujeres">Malliot</button></li>
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="culotte_mujeres">Culotte</button></li>
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="accesorios_mujeres">Accesorios</button></li>
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="ofertas_mujeres">Ofertas</button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Hombres
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="malliot_hombres">Malliot</button></li>
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="culotte_hombres">Culotte</button></li>
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="accesorios_hombres">Accesorios</button></li>
+                        <li><button class="dropdown-item filtroCategoria" data-categoria="ofertas_hombres">Ofertas</button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Custom aerea</a>
+                    </li>
+                    <li>
+                      <button id="verOcultarCarritoButton">Ver/ Ocultar Carrito</button>
+                    </li>
+                  </ul>
                 </div>
-              </nav>
+              </div>
+            </div>
+          </div>
         </div>
+      </nav>
+    </header>
+    <div class="oculta page" id="carrito">
+      <p>No hay productos en el carrito</p>
+    </div>   
+    <div class="video-container">
+      <video src="video/tour1.mp4" id="video" class="video" muted autoplay loop>Tour de Francia</video>
     </div>
-    <script src="/js/script.js"></script>
+  </div>
+  <div>
+    <div>
+      <h4>
+        Explora
+      </h4>
+    </div>
+    <div>
+      <h2>
+        Nuevos lanzamientos
+      </h2>
+    </div>
+    <div class="busqueda">
+      <input id="buscador" placeholder="Buscar producto">
+      <button id="buscar">Buscar</button>
+    </div>
+    <div id="contenedorProductos">
+      <!-- caja de productos slider -->
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary btn-lg">Compra Ahora</button>
+    </div>
+  </div>
+  <div class="video-container">
+    <video src="video/tour2.mp4" id="video" class="video" muted autoplay loop>Tour de Francia</video>
+  </div>
+  <div>
+    <h4>
+      Explora
+    </h4>
+    <h2>
+      Conoce nuestra marca
+    </h2>
+    <div>
+    <!-- texto grande 1 -->
+    </div>
+    <div>
+    <!-- texto mediano 2 -->
+    </div>
+    <div>
+    <img src="" alt="">
+    </div>
+    <div>
+      <img src="" alt="">
+      <img src="" alt="">
+    </div>
+  </div>
+  <div>
+    <footer>
+      <!-- footer -->
+    </footer>
+  </div>
+  <script src="/js/script.js"></script>
 </body>
 </html>
