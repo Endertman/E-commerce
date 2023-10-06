@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Inicio</a>
+                      <a class="nav-link" id="recarga" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,7 +56,7 @@
                       <a class="nav-link" href="#">Custom aerea</a>
                     </li>
                     <li>
-                      <button id="verOcultarCarritoButton">Ver/ Ocultar Carrito</button>
+                      <button class="btn" id="verOcultarCarritoButton"><iconify-icon icon="tabler:shopping-cart" width="30" height="30"></iconify-icon></button>
                     </li>
                   </ul>
                 </div>
@@ -102,8 +102,9 @@
       <input id="buscador" placeholder="Buscar producto">
       <button id="buscar">Buscar</button>
     </div>
-    <div id="contenedorProductos">
-      <!-- caja de productos slider -->
+    <div class="container text-center">
+      <div id="contenedorProductos" class="row row-cols-2">
+      </div>
     </div>
     <div>
         <button type="button" class="btn btn-primary btn-lg">Compra Ahora</button>

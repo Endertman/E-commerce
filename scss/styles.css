@@ -1,6 +1,15 @@
+@font-face {
+  font-family: "avalon";
+  src: url(/fonts/Avalon-Bold.0bd8c913.woff2) format("truetype");
+}
+@font-face {
+  font-family: "instrument";
+  src: url(/fonts/InstrumentSans-Regular.f63049a1.woff2) format("truetype");
+}
 body {
   margin: 0;
   padding: 0;
+  font-family: "Avalon", sans-serif;
 }
 
 .logo {
@@ -15,6 +24,16 @@ body {
 .video-container video {
   width: 100%;
   height: auto;
+}
+
+.carousel-item {
+  height: 32rem;
+}
+
+.card {
+  width: 19rem;
+  text-align: center;
+  font-family: "instrument";
 }
 
 .oculta {

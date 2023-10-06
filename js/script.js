@@ -66,6 +66,34 @@ let productos = [
     },
 ];
 
+// Array de euipos
+let equipos = [
+    {
+        equipo: "Team Jumbo Visma",
+        rutaImagen: "https://c7r2q8r6.stackpathcdn.com/wp-content/uploads/2020/02/Jumbo-Visma-2020-e1582639668174.jpg"
+    },
+    {
+        equipo: "Team UAE Emirates",
+        rutaImagen: "https://i.eurosport.com/2021/07/02/3165848-64872415-1600-900.jpg"
+    },
+    {
+        equipo: "Team Lidl - Trek",
+        rutaImagen: "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/TK23-Lidl-Trek-Team-Apparel-Launch-Update-Marquee-2"
+    },
+    {
+        equipo: "Team Bora - Hansgrohe",
+        rutaImagen: "https://th.bing.com/th/id/R.c58d2c2e3ab2f3b53384b95223e375f8?rik=%2fcNN5dqrMQY7Pg&pid=ImgRaw&r=0"
+    },
+    {
+        equipo: "Team Soudal - Quick Step",
+        rutaImagen: "https://discover.garmin.com/pros/img/soudal-quick-step-gallery-01.jpg"
+    },
+    {
+        equipo: "Team Ineos",
+        rutaImagen: "https://discover.garmin.com/pros/img/ineos-grenadiers-cycling-team-gallery-01.jpg"
+    },
+]
+
 // Función para renderizar los productos
 function renderizarProductos(productos) {
     const contenedor = document.getElementById("contenedorProductos");
@@ -79,12 +107,15 @@ function renderizarProductos(productos) {
 
     productos.forEach(producto => {
         const articulo = document.createElement("div");
-        articulo.classList.add("articulo");
+        articulo.classList.add("card");
         articulo.innerHTML = `
-            <h3>${producto.producto}</h3>
-            <img class="imagenProducto" src="${producto.rutaImagen}" alt="${producto.producto}">
-            <p>Precio: $${producto.precio}</p>
-            <button class="agregar-al-carrito" data-id="${producto.id}">Agregar al carrito</button>`;
+            <img class="card-img-top" src="${producto.rutaImagen}" alt="${producto.producto}">
+            <div class="card-body">
+                <h5 class="card-title">${producto.producto}</h5>
+                <p class="card-text">Precio: $${producto.precio}</p>
+                <p class="card-text">Tallas Disponibles: ${producto.talla}</p>
+                <a href="#" class="btn btn-primary"><button class="agregar-al-carrito btn btn-primary" data-id="${producto.id}">Agregar al carrito</button></a>
+            </div>`;
         contenedor.appendChild(articulo);
     });
 }
@@ -234,32 +265,32 @@ botonesCategoria.forEach(boton => {
 
 // Carrusel con productos alertorios
 
-function generarProductosAleatorios(productos, cantidad) {
-    const productosAleatorios = [];
-    const copiaProductos = [...productos];
+function generarEquiposAleatorios(equipos, cantidad) {
+    const equiposAleatorios = [];
+    const copiaEquipos = [...equipos];
 
     for (let i = 0; i < cantidad; i++) {
-        if (copiaProductos.length === 0) {
+        if (copiaEquipos.length === 0) {
             break; // Evita un bucle infinito si se solicitan más productos de los disponibles
         }
 
-        const indiceAleatorio = Math.floor(Math.random() * copiaProductos.length);
-        const productoAleatorio = copiaProductos.splice(indiceAleatorio, 1)[0];
-        productosAleatorios.push(productoAleatorio);
+        const indiceAleatorio = Math.floor(Math.random() * copiaEquipos.length);
+        const equipoAleatorio = copiaEquipos.splice(indiceAleatorio, 1)[0];
+        equiposAleatorios.push(equipoAleatorio);
     }
 
-    return productosAleatorios;
+    return equiposAleatorios;
 }
 
 // Genera una lista de 3 productos aleatorios para el carrusel
-const productosAleatorios = generarProductosAleatorios(productos, 3);
+const equiposAleatorios = generarEquiposAleatorios(equipos, 3);
 
 // Referencias a elementos del carrusel
 const carouselIndicators = document.querySelector(".carousel-indicators");
 const carouselInner = document.querySelector(".carousel-inner");
 
 // Itera sobre los productos aleatorios y crea los elementos del carrusel
-productosAleatorios.forEach((producto, index) => {
+equiposAleatorios.forEach((equipos, index) => {
     // Crea un indicador
     const indicator = document.createElement("button");
     indicator.type = "button";
@@ -279,10 +310,9 @@ productosAleatorios.forEach((producto, index) => {
 
     // Agrega la imagen y título del producto al elemento de carrusel
     carouselItem.innerHTML = `
-        <img src="${producto.rutaImagen}" class="d-block w-100" alt="${producto.producto}">
+        <img src="${equipos.rutaImagen}" class="d-block w-100" alt="${equipos.equipo}">
         <div class="carousel-caption d-none d-md-block">
-            <h5>${producto.producto}</h5>
-            <p>Descripción del producto.</p>
+            <h5>${equipos.equipo}</h5>
         </div>
     `;
 
