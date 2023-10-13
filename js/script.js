@@ -1,6 +1,5 @@
 // Array de productos
-let productos = [
-    {
+let productos = [{
         id: 1,
         producto: "Malliot Jumbo Visma - Tour de Francia 2023 The Vélodrome Collection",
         categoria: "malliot_hombres",
@@ -67,8 +66,7 @@ let productos = [
 ];
 
 // Array de euipos
-let equipos = [
-    {
+let equipos = [{
         equipo: "Team Jumbo Visma",
         rutaImagen: "https://c7r2q8r6.stackpathcdn.com/wp-content/uploads/2020/02/Jumbo-Visma-2020-e1582639668174.jpg"
     },

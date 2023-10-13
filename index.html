@@ -1,77 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aeroco</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="/scss/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aeroco</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+  </script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="/scss/styles.css">
 </head>
+
 <body>
-  <div>
-    <header class="sticky-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <a class="navbar-brand" href="index.html">
-                  <img class="logo" id="recarga" src="img/logo_black.svg" alt="Aeroco black_logo">
-                </a>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+          <div class="row">
+            <div class="col-2 logo">
+              <a class="navbar-brand" href="index.html">
+                <img class="logo" id="recarga" src="img/logo_black.svg" alt="Aeroco black_logo">
+              </a>
+            </div>
+            <div class="col-8">
+              <div class="collapse navbar-collapse nav_bar" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" id="recarga" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Mujeres
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="malliot_mujeres">Malliot</button>
+                      </li>
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="culotte_mujeres">Culotte</button>
+                        </li>
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="accesorios_mujeres">Accesorios</button>
+                        </li>
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="ofertas_mujeres">Ofertas</button>
+                        </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Hombres
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="malliot_hombres">Malliot</button>
+                      </li>
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="culotte_hombres">Culotte</button>
+                      </li>
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="accesorios_hombres">Accesorios</button>
+                      </li>
+                      <li>
+                        <button onclick="location.href = '#area_productos'" class="dropdown-item filtroCategoria" data-categoria="ofertas_hombres">Ofertas</button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Custom aerea</a>
+                  </li>
+                </ul> 
               </div>
-              <div class="col">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link" id="recarga" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Mujeres
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="malliot_mujeres">Malliot</button></li>
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="culotte_mujeres">Culotte</button></li>
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="accesorios_mujeres">Accesorios</button></li>
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="ofertas_mujeres">Ofertas</button></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Hombres
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="malliot_hombres">Malliot</button></li>
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="culotte_hombres">Culotte</button></li>
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="accesorios_hombres">Accesorios</button></li>
-                        <li><button class="dropdown-item filtroCategoria" data-categoria="ofertas_hombres">Ofertas</button></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Custom aerea</a>
-                    </li>
-                    <li>
-                      <button class="btn" id="verOcultarCarritoButton"><iconify-icon icon="tabler:shopping-cart" width="30" height="30"></iconify-icon></button>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            </div>
+            <div class="col-2">
+              <ul class="navbar-nav button_cart">
+                 <li class="nav-item">
+                  <button class="btn" id="verOcultarCarritoButton">
+                    <iconify-icon icon="tabler:shopping-cart" width="30" height="30"></iconify-icon>
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
     <div class="oculta page" id="carrito">
-      <p>No hay productos en el carrito</p>
-    </div>   
-    <div class="video-container">
-      <video src="video/tour1.mp4" id="video" class="video" muted autoplay loop>Tour de Francia</video>
+      <p class="null_cart">No hay productos en el carrito</p>
     </div>
+  </header>
+  <div class="video-container">
+    <video src="video/tour1.mp4" id="video" class="video" muted autoplay loop>Tour de Francia</video>
   </div>
   <div>
     <div>
@@ -89,25 +113,27 @@
       </div>
       <div class="carousel-inner">
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
       </button>
-  </div>
+    </div>
     <div class="busqueda">
       <input id="buscador" placeholder="Buscar producto">
       <button id="buscar">Buscar</button>
     </div>
-    <div class="container text-center">
+    <div id="area_productos" class="container text-center">
       <div id="contenedorProductos" class="row row-cols-2">
       </div>
     </div>
     <div>
-        <button type="button" class="btn btn-primary btn-lg">Compra Ahora</button>
+      <button type="button" class="btn btn-primary btn-lg">Compra Ahora</button>
     </div>
   </div>
   <div class="video-container">
@@ -121,13 +147,13 @@
       Conoce nuestra marca
     </h2>
     <div>
-    <!-- texto grande 1 -->
+      <!-- texto grande 1 -->
     </div>
     <div>
-    <!-- texto mediano 2 -->
+      <!-- texto mediano 2 -->
     </div>
     <div>
-    <img src="" alt="">
+      <img src="" alt="">
     </div>
     <div>
       <img src="" alt="">
@@ -141,4 +167,5 @@
   </div>
   <script src="/js/script.js"></script>
 </body>
+
 </html>
