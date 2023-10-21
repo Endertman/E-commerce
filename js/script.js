@@ -1,5 +1,6 @@
 // Array de productos
-let productos = [{
+let productos = [
+    {
         id: 1,
         producto: "Malliot Jumbo Visma - Tour de Francia 2023 The Vélodrome Collection",
         categoria: "malliot_hombres",
@@ -56,7 +57,7 @@ let productos = [{
         rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/PANTALONCINO-CORTO-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_634_dettaglio@2x.jpg",
     },
     {
-        id: 4,
+        id: 8,
         producto: "Malliot UAE Team Emirates Mujer",
         categoria: "malliot_mujeres",
         talla: "S-M-L-Xl",
@@ -66,7 +67,8 @@ let productos = [{
 ];
 
 // Array de euipos
-let equipos = [{
+let equipos = [
+    {
         equipo: "Team Jumbo Visma",
         rutaImagen: "https://c7r2q8r6.stackpathcdn.com/wp-content/uploads/2020/02/Jumbo-Visma-2020-e1582639668174.jpg"
     },
@@ -120,7 +122,19 @@ function renderizarProductos(productos) {
 
 renderizarProductos(productos);
 
-// Función para agregar un producto al carrito
+
+function mostrarNotificacion(mensaje, tipo) {
+    Toastify({
+      text: mensaje,
+      duration: 6000, 
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "center", 
+      backgroundColor: tipo === "success" ? "green" : "red", 
+    }).showToast();
+  }
+
 function agregarAlCarrito(productoId) {
     const producto = productos.find(p => p.id === productoId);
 
@@ -146,6 +160,7 @@ function agregarAlCarrito(productoId) {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
     renderizarCarrito();
+    mostrarNotificacion("Producto agregado al carrito", "success");
 }
 
 document.addEventListener("click", (event) => {
@@ -204,7 +219,7 @@ function finalizarCompra() {
     const carrito = document.getElementById("carrito");
     carrito.innerHTML = "No hay productos en el carrito";
     localStorage.removeItem("carrito");
-    alert("Compra realizada con éxito!");
+    mostrarNotificacion("Compra realizada con éxito", "success");
     verOcultarCarrito();
 }
 
@@ -261,34 +276,32 @@ botonesCategoria.forEach(boton => {
     });
 });
 
-// Carrusel con productos alertorios
-
-function generarEquiposAleatorios(equipos, cantidad) {
-    const equiposAleatorios = [];
-    const copiaEquipos = [...equipos];
+function generarProductosAleatorios(productos, cantidad) {
+    const productosAleatorios = [];
+    const copiaProductos = [...productos];
 
     for (let i = 0; i < cantidad; i++) {
-        if (copiaEquipos.length === 0) {
+        if (copiaProductos.length === 0) {
             break; // Evita un bucle infinito si se solicitan más productos de los disponibles
         }
 
-        const indiceAleatorio = Math.floor(Math.random() * copiaEquipos.length);
-        const equipoAleatorio = copiaEquipos.splice(indiceAleatorio, 1)[0];
-        equiposAleatorios.push(equipoAleatorio);
+        const indiceAleatorio = Math.floor(Math.random() * copiaProductos.length);
+        const productoAleatorio = copiaProductos.splice(indiceAleatorio, 1)[0];
+        productosAleatorios.push(productoAleatorio);
     }
 
-    return equiposAleatorios;
+    return productosAleatorios;
 }
 
 // Genera una lista de 3 productos aleatorios para el carrusel
-const equiposAleatorios = generarEquiposAleatorios(equipos, 3);
+const productosAleatorios = generarProductosAleatorios(productos, 3);
 
 // Referencias a elementos del carrusel
 const carouselIndicators = document.querySelector(".carousel-indicators");
 const carouselInner = document.querySelector(".carousel-inner");
 
 // Itera sobre los productos aleatorios y crea los elementos del carrusel
-equiposAleatorios.forEach((equipos, index) => {
+productosAleatorios.forEach((producto, index) => {
     // Crea un indicador
     const indicator = document.createElement("button");
     indicator.type = "button";
@@ -308,9 +321,10 @@ equiposAleatorios.forEach((equipos, index) => {
 
     // Agrega la imagen y título del producto al elemento de carrusel
     carouselItem.innerHTML = `
-        <img src="${equipos.rutaImagen}" class="d-block w-100" alt="${equipos.equipo}">
+        <img src="${producto.rutaImagen}" class="d-block w-100" alt="${producto.producto}">
         <div class="carousel-caption d-none d-md-block">
-            <h5>${equipos.equipo}</h5>
+            <h5>${producto.producto}</h5>
+            <p>Descripción del producto.</p>
         </div>
     `;
 
