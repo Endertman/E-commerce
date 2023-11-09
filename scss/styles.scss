@@ -25,6 +25,10 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 8px;
+        button{
+            $display-font-family: "instrument";
+            font-weight: 400;
+        }
 }
 
 .button_cart {

@@ -31,6 +31,9 @@ body {
   align-items: center;
   margin-top: 8px;
 }
+.nav_bar button {
+  font-weight: 400;
+}
 
 .button_cart {
   display: flex;
