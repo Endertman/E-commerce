@@ -1,70 +1,13 @@
+fetch('js/products.json')
+    .then(response => response.json())
+    .then(data => {
+        renderizarProductos(data);
+    })
+    .catch(error => console.error('Error al cargar los datos:', error));
+
+
 // Array de productos
-let productos = [
-    {
-        id: 1,
-        producto: "Malliot Jumbo Visma - Tour de Francia 2023 The Vélodrome Collection",
-        categoria: "malliot_hombres",
-        talla: "S-M-L-Xl",
-        precio: 55,
-        rutaImagen: "https://dvy7d3tlxdpkf.cloudfront.net/team-jumbo/_1755xAUTO_resize_center-center_85_none/1984393/Tourshirt-mannen-1.webp",
-    },
-    {
-        id: 2,
-        producto: "Malliot Jumbo Visma",
-        categoria: "malliot_hombres",
-        talla: "S-M-L-Xl",
-        precio: 45,
-        rutaImagen: "https://dvy7d3tlxdpkf.cloudfront.net/team-jumbo/_1755xAUTO_resize_center-center_85_none/1636519/49035600_main_01.webp",
-    },
-    {
-        id: 3,
-        producto: "Malliot Amarillo Tour de Francia 2023 - Jonas Vingegard - Jumbo Visma",
-        categoria: "malliot_hombres",
-        talla: "S-M-L-Xl",
-        precio: 60,
-        rutaImagen: "https://dvy7d3tlxdpkf.cloudfront.net/team-jumbo/_1755xAUTO_resize_center-center_85_none/2064080/TM9440023TDELDER_GI_CLOSEUP01_2023-07-17-154526_zyzb.webp",
-    },
-    {
-        id: 4,
-        producto: "Malliot UAE Team Emirates",
-        categoria: "malliot_hombres",
-        talla: "S-M-L-Xl",
-        precio: 70,
-        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/MAGLIA-MANICHE-CORTE-UFFICIALE-UAE-TEAM-EMIRATES-PISSEI_642_dettaglio@2x.jpg",
-    },
-    {
-        id: 5,
-        producto: "Calcetines UAE Team Emirates",
-        categoria: "accesorios",
-        talla: "S/M-L/Xl",
-        precio: 30,
-        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/CALZINO-UAE-TEAM-EMIRATES-PISSEI_912_dettaglio@2x.jpg",
-    },
-    {
-        id: 6,
-        producto: "Cap UAE Team Emirates",
-        categoria: "accesorios",
-        talla: "Unica",
-        precio: 25,
-        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/CAPPELLINO-UAE-TEAM-EMIRATES-PISSEI_638_dettaglio@2x.jpg",
-    },
-    {
-        id: 7,
-        producto: "Culotte UAE Team Emirates Mujer",
-        categoria: "culotte",
-        talla: "S-M-L-Xl",
-        precio: 100,
-        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/PANTALONCINO-CORTO-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_634_dettaglio@2x.jpg",
-    },
-    {
-        id: 8,
-        producto: "Malliot UAE Team Emirates Mujer",
-        categoria: "malliot_mujeres",
-        talla: "S-M-L-Xl",
-        precio: 85,
-        rutaImagen: "https://www.pissei.com/upload/articoli/dettaglio/MAGLIA-MANICHE-CORTE-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_635_dettaglio@2x.jpg",
-    },
-];
+
 
 // Array de euipos
 let equipos = [
@@ -94,7 +37,6 @@ let equipos = [
     },
 ]
 
-// Función para renderizar los productos
 function renderizarProductos(productos) {
     const contenedor = document.getElementById("contenedorProductos");
 
@@ -103,20 +45,52 @@ function renderizarProductos(productos) {
         return;
     }
 
-    contenedor.innerHTML = "";
-
     productos.forEach(producto => {
+        const carruselId = `carousel-${producto.id}`; // ID único para cada carrusel
         const articulo = document.createElement("div");
         articulo.classList.add("card");
+        const imagenes = producto.rutaImagen;
+
+        const imagenesOrdenadas = Object.values(imagenes).sort();
+
         articulo.innerHTML = `
-            <img class="card-img-top" src="${producto.rutaImagen}" alt="${producto.producto}">
+            <div id="${carruselId}" class="carousel slide">
+                <div class="carousel-inner">
+                    <!-- Aquí agregas las imágenes del carrusel -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#${carruselId}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#${carruselId}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" ariahidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">${producto.producto}</h5>
                 <p class="card-text">Precio: $${producto.precio}</p>
                 <p class="card-text">Tallas Disponibles: ${producto.talla}</p>
-                <a href="#" class="btn btn-primary"><button class="agregar-al-carrito btn btn-primary" data-id="${producto.id}">Agregar al carrito</button></a>
-            </div>`;
+                <a href="#" class="btn btn-primary">
+                    <button class="agregar-al-carrito btn btn-primary" data-id="${producto.id}">Agregar al carrito</button>
+                </a>
+            </div>
+        `;
+
         contenedor.appendChild(articulo);
+        
+        const carouselInner = articulo.querySelector(`#${carruselId} .carousel-inner`);
+        imagenesOrdenadas.forEach((imagen, index) => {
+            const carouselItem = document.createElement("div");
+            carouselItem.classList.add("carousel-item");
+            if (index === 0) {
+                carouselItem.classList.add("active");
+            }
+            carouselItem.innerHTML = `
+                <img src="${imagen}" class="d-block w-100" alt="${producto.producto} - Imagen ${index + 1}">
+            `;
+            carouselInner.appendChild(carouselItem);
+        });
     });
 }
 

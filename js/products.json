@@ -1,0 +1,171 @@
+[
+    {
+        "id": 1,
+        "producto": "Malliot Jumbo Visma - Tour de Francia 2023 The Vélodrome Collection | Hombre",
+        "categoria": "malliot_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 55,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/velodrome/men/1.webp",
+            "2": "img/jumbo_visma/velodrome/men/2.webp",
+            "3": "img/jumbo_visma/velodrome/men/3.webp",
+            "4": "img/jumbo_visma/velodrome/men/4.webp",
+            "5": "img/jumbo_visma/velodrome/men/5.webp"
+        }
+    },
+    {
+        "id": 2,
+        "producto": "Malliot Jumbo Visma | Hombre",
+        "categoria": "malliot_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 45,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/jumbo_visma/men/malliot/1.webp",
+            "2": "img/jumbo_visma/jumbo_visma/men/malliot/2.webp",
+            "3": "img/jumbo_visma/jumbo_visma/men/malliot/3.webp",
+            "4": "img/jumbo_visma/jumbo_visma/men/malliot/4.webp",
+            "5": "img/jumbo_visma/jumbo_visma/men/malliot/5.webp"
+        }
+    },
+    {
+        "id": 3,
+        "producto": "Malliot Amarillo Tour de Francia 2023 - Jonas Vingegard - Jumbo Visma",
+        "categoria": "malliot_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 60,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/tour/men/1.webp",
+            "2": "img/jumbo_visma/tour/men/2.webp",
+            "3": "img/jumbo_visma/tour/men/3.webp",
+            "4": "img/jumbo_visma/tour/men/4.webp",
+            "5": "img/jumbo_visma/tour/men/5.webp"
+        }
+    },
+    {
+        "id": 4,
+        "producto": "Malliot UAE Team Emirates",
+        "categoria": "malliot_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 70,
+        "rutaImagen": "https://www.pissei.com/upload/articoli/dettaglio/MAGLIA-MANICHE-CORTE-UFFICIALE-UAE-TEAM-EMIRATES-PISSEI_642_dettaglio@2x.jpg"
+    },
+    {
+        "id": 5,
+        "producto": "Calcetines UAE Team Emirates",
+        "categoria": "accesorios",
+        "talla": "S/M-L/Xl",
+        "precio": 30,
+        "rutaImagen": "https://www.pissei.com/upload/articoli/dettaglio/CALZINO-UAE-TEAM-EMIRATES-PISSEI_912_dettaglio@2x.jpg"
+    },
+    {
+        "id": 6,
+        "producto": "Cap UAE Team Emirates",
+        "categoria": "accesorios",
+        "talla": "Unica",
+        "precio": 25,
+        "rutaImagen": "https://www.pissei.com/upload/articoli/dettaglio/CAPPELLINO-UAE-TEAM-EMIRATES-PISSEI_638_dettaglio@2x.jpg"
+    },
+    {
+        "id": 7,
+        "producto": "Culotte UAE Team Emirates Mujer",
+        "categoria": "culotte",
+        "talla": "S-M-L-Xl",
+        "precio": 100,
+        "rutaImagen": "https://www.pissei.com/upload/articoli/dettaglio/PANTALONCINO-CORTO-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_634_dettaglio@2x.jpg"
+    },
+    {
+        "id": 8,
+        "producto": "Malliot UAE Team Emirates Mujer",
+        "categoria": "malliot_mujeres",
+        "talla": "S-M-L-Xl",
+        "precio": 85,
+        "rutaImagen": "https://www.pissei.com/upload/articoli/dettaglio/MAGLIA-MANICHE-CORTE-DONNA-REPLICA-UAE-TEAM-ADQ-PISSEI_635_dettaglio@2x.jpg"
+    },
+    {
+        "id": 9,
+        "producto": "Malliot Jumbo Visma | Mujer",
+        "categoria": "malliot_mujeres",
+        "talla": "S-M-L-Xl",
+        "precio": 52,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/jumbo_visma/women/malliot/1.webp",
+            "2": "img/jumbo_visma/jumbo_visma/women/malliot/2.webp",
+            "3": "img/jumbo_visma/jumbo_visma/women/malliot/3.webp",
+            "4": "img/jumbo_visma/jumbo_visma/women/malliot/4.webp",
+            "5": "img/jumbo_visma/jumbo_visma/women/malliot/5.webp",
+            "6": "img/jumbo_visma/jumbo_visma/women/malliot/6.webp",
+            "7": "img/jumbo_visma/jumbo_visma/women/malliot/7.webp"
+        }
+    },
+    {
+        "id": 10,
+        "producto": "Culotte Jumbo Visma | Mujer",
+        "categoria": "culotte_mujeres",
+        "talla": "S-M-L-Xl",
+        "precio": 52,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/jumbo_visma/women/culotte/1.webp",
+            "2": "img/jumbo_visma/jumbo_visma/women/culotte/2.webp",
+            "3": "img/jumbo_visma/jumbo_visma/women/culotte/3.webp",
+            "4": "img/jumbo_visma/jumbo_visma/women/culotte/4.webp"
+        }
+    },
+    {
+        "id": 11,
+        "producto": "Culotte Jumbo Visma | Hombre",
+        "categoria": "culotte_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 52,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/jumbo_visma/men/culotte/1.webp",
+            "2": "img/jumbo_visma/jumbo_visma/men/culotte/2.webp",
+            "3": "img/jumbo_visma/jumbo_visma/men/culotte/3.webp",
+            "4": "img/jumbo_visma/jumbo_visma/men/culotte/4.webp"
+        }
+    },
+    {"id": 12,
+        "producto": "Malliot largo Jumbo Visma | Hombre",
+        "categoria": "malliot_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 45,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/jumbo_visma/men/malliot_largo/1.webp",
+            "2": "img/jumbo_visma/jumbo_visma/men/malliot_largo/2.webp",
+            "3": "img/jumbo_visma/jumbo_visma/men/malliot_largo/3.webp",
+            "4": "img/jumbo_visma/jumbo_visma/men/malliot_largo/4.webp",
+            "5": "img/jumbo_visma/jumbo_visma/men/malliot_largo/5.webp"
+        }
+    },
+    {
+        "id": 13,
+        "producto": "Malliot Jumbo Visma - Tour de Francia 2023 The Vélodrome Collection | Mujer",
+        "categoria": "malliot_mujeres",
+        "talla": "S-M-L-Xl",
+        "precio": 55,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/velodrome/women/1.webp",
+            "2": "img/jumbo_visma/velodrome/women/2.webp",
+            "3": "img/jumbo_visma/velodrome/women/3.webp",
+            "4": "img/jumbo_visma/velodrome/women/4.webp",
+            "5": "img/jumbo_visma/velodrome/women/5.webp",
+            "6": "img/jumbo_visma/velodrome/women/6.webp",
+            "7": "img/jumbo_visma/velodrome/women/7.webp"
+        }
+    },
+    {
+        "id": 14,
+        "producto": "Malliot Wout Van Aert | Jumbo Visma | Hombre",
+        "categoria": "malliot_hombres",
+        "talla": "S-M-L-Xl",
+        "precio": 75,
+        "rutaImagen": {
+            "1": "img/jumbo_visma/wout/men/1.webp",
+            "2": "img/jumbo_visma/wout/men/2.webp",
+            "3": "img/jumbo_visma/wout/men/3.webp",
+            "4": "img/jumbo_visma/wout/men/4.webp",
+            "5": "img/jumbo_visma/wout/men/5.webp",
+            "6": "img/jumbo_visma/wout/men/6.webp",
+            "7": "img/jumbo_visma/wout/men/7.webp"
+        }
+    }
+]
